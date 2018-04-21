@@ -38,7 +38,7 @@ var buyItem = function(){
     type: 'input',
     message:"Select the item ID of the item you'd like to purchase.",
     validate: function(value){
-      if(!isNaN(value)){
+      if(!isNaN(value) && value.length>0){
         return true;
     } else {
         return false;
@@ -51,7 +51,7 @@ var buyItem = function(){
     type: 'input',
     message:"Select the amount of the item you'd like to purchase.",
     validate: function(value){
-      if(!isNaN(value)){
+      if(!isNaN(value) && value.length>0){
         return true;
     } else {
         return false;
@@ -73,6 +73,7 @@ var buyItem = function(){
     }
     if (res.length === 0){
       console.log("Unrecognized item ID.")
+      console.log("----------------------------------------")
       showProducts()
     } else {
       
